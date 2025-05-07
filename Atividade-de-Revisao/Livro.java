@@ -5,6 +5,7 @@ public class Livro {
     private Integer anoPublicacao;
     private Double precoBase;
     private Integer estoque;
+    public static final ArrayList<Livro> livros = new ArrayList<>();
 
     public Livro(String titulo, String autor, int anoPublicacao, double valor,  Integer estoque) {
         this.titulo = titulo;
@@ -20,6 +21,7 @@ public class Livro {
             this.precoBase = null;
         }
         this.estoque = estoque;
+        livros.add(this);
 
     }
 

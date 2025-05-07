@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Pedido {
-    private final Cliente cliente;
+    private Cliente cliente;
     private HashMap<Livro, Integer> pedidos =  new HashMap<>();
 
     public Pedido(Cliente cliente, HashMap<Livro, Integer> pedidos) {
@@ -56,5 +56,21 @@ public class Pedido {
 
     public void adicionarItem(Livro livro){
         pedidos.put(livro, 1);
+    }
+
+    public void limparPedido(){
+        pedidos.clear();
+    }
+
+    public void setCliente(Cliente cliente){
+        if (cliente != null){
+            this.cliente.setNome(cliente.getNome());
+            this.cliente.setEmail(cliente.getEmail());
+            this.cliente.setSaldoCarteira(cliente.getSaldoCarteira());
+        } else {
+            this.cliente.setNome("");
+            this.cliente.setEmail("");
+            this.cliente.setSaldoCarteira(0.0);
+        }
     }
 }
